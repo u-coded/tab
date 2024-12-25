@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>タブ</title>
+</head>
+
+<body>
+  <h1>タブ</h1>
+  <p>タブキーや矢印キーでの操作にも対応している。入れ子のタブにも対応している。</p>
+
+  <section>
+    <h2>1つ目のタブセット</h2>
+    <div data-tabset>
+      <div role="tablist">
+        <button id="tab1-1" data-tab role="tab" aria-selected="true" aria-controls="panel1-1" tabindex="0">タブ1-1</button>
+        <button id="tab1-2" data-tab role="tab" aria-selected="false" aria-controls="panel1-2" tabindex="-1">タブ1-2</button>
+        <button id="tab1-3" data-tab role="tab" aria-selected="false" aria-controls="panel1-3" tabindex="-1">タブ1-3</button>
+      </div>
+      <div id="panel1-1" data-tabpanel role="tabpanel" aria-labelledby="tab1-1">
+        <p>タブ1-1のコンテンツ</p>
+      </div>
+      <div id="panel1-2" data-tabpanel role="tabpanel" aria-labelledby="tab1-2" hidden>
+        <p>タブ1-2のコンテンツ</p>
+        <button>フォーカスのテスト</button>
+      </div>
+      <div id="panel1-3" data-tabpanel role="tabpanel" aria-labelledby="tab1-3" hidden>
+        <p>タブ1-3のコンテンツ</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2つ目のタブセット</h2>
+    <p>タブ2-2の中にさらにタブがある</p>
+    <div data-tabset>
+      <div role="tablist">
+        <button id="tab2-1" data-tab role="tab" aria-selected="true" aria-controls="panel2-1" tabindex="0">タブ2-1</button>
+        <button id="tab2-2" data-tab role="tab" aria-selected="false" aria-controls="panel2-2" tabindex="-1">タブ2-2</button>
+        <button id="tab2-3" data-tab role="tab" aria-selected="false" aria-controls="panel2-3" tabindex="-1">タブ2-3</button>
+      </div>
+      <div id="panel2-1" data-tabpanel role="tabpanel" aria-labelledby="tab2-1">
+        <p>タブ2-1のコンテンツ</p>
+      </div>
+      <div id="panel2-2" data-tabpanel role="tabpanel" aria-labelledby="tab2-2" hidden>
+        <p>タブ2-2のコンテンツ</p>
+        <div data-tabset>
+          <div role="tablist">
+            <button id="tab2-2-1" data-tab role="tab" aria-selected="true" aria-controls="panel2-2-1" tabindex="0">タブ2-2の子タブ1</button>
+            <button id="tab2-2-2" data-tab role="tab" aria-selected="false" aria-controls="panel2-2-2" tabindex="-1">タブ2-2の子タブ2</button>
+            <button id="tab2-2-3" data-tab role="tab" aria-selected="false" aria-controls="panel2-2-3" tabindex="-1">タブ2-2の子タブ3</button>
+          </div>
+          <div id="panel2-2-1" data-tabpanel role="tabpanel" aria-labelledby="tab2-2-1">
+            <p>タブ2-2の子タブ1のコンテンツ</p>
+          </div>
+          <div id="panel2-2-2" data-tabpanel role="tabpanel" aria-labelledby="tab2-2-2" hidden>
+            <p>タブ2-2の子タブ2のコンテンツ</p>
+          </div>
+          <div id="panel2-2-3" data-tabpanel role="tabpanel" aria-labelledby="tab2-2-3" hidden>
+            <p>タブ2-2の子タブ3のコンテンツ</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel2-3" data-tabpanel role="tabpanel" aria-labelledby="tab2-3" hidden>
+        <p>タブ2-3のコンテンツ</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
